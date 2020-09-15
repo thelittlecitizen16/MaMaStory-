@@ -1,13 +1,17 @@
+let allPlayers =[];
+
+
 function AddAllPlayersType(allPlayersType){
-    document.getElementById('playerType').innerHTML = "";
     allPlayersType.forEach(element => {
-        AddPlayer(element);
+        AddPlayer(element.playerType);
     });
 }
 
 function AddAllWeapon(){
+    document.getElementById('weapon').innerHTML = "";
     let playrtType = document.getElementById("playerType").value;
-    allWeapon.forEach(element => {
+    let player =allPlayersType.filter(p=>p.playerType == playrtType)[0];
+    player.weapons.forEach(element => {
         AddWeapon(element);
     });
 }
@@ -30,6 +34,10 @@ function CreatePlayer()
 {
     let playerType = document.getElementById("playerType").value;
     let name = document.getElementById("name").value;
+    let damage = document.getElementById("damage").value;
     let gender = document.getElementById("gender").value;
     let weapon = document.getElementById("weapon").value;
+
+    let player =CreateplayerByType(playerType,weapon,damage, gender,name);
+    allPlayers.push(player);
 }

@@ -56,8 +56,34 @@ class Bower extends BasePlayer
       }
 }
 
-let allPlayersType =[
- "Warrior",
-  "Wizard",
-  "Bower"
-]
+// let allPlayersType =[
+//  "Warrior",
+//   "Wizard",
+//   "Bower"
+// ];
+
+
+let  allPlayersType=[
+  {"playerType":"Warrior","weapons":["Sword","Axe","Blunt" ]},
+  {"playerType":"Wizard","weapons":["Wand"]},
+  {"playerType":"Bower","weapons":["Bow","Sword" ]}
+ ];
+
+function CreateplayerByType(playerType, baseWeapon, damage, gender, name)
+{
+  switch(playerType)
+  {
+      case "Warrior" :
+        return new  Warrior(CreateWeaponByName(baseWeapon, damage), gender, name);
+        break;
+      case "Wizard" :
+        console.log(CreateWeaponByName(baseWeapon, damage));
+        return new  Wizard(CreateWeaponByName(baseWeapon, damage), gender, name);
+        break;
+      case "Bower" :
+        return new  Bower(CreateWeaponByName(baseWeapon, damage), gender, name);
+        break;
+  }
+}
+
+

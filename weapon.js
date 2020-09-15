@@ -71,11 +71,33 @@ class Bow extends BaseWeapon
 }
 
 
-let allWeapon =[
-    "Wand",
-     "Sword",
-     "Axe",
-     "Blunt",
-     "Bow"
-   ]
+// let allWeapon =[
+//     "Wand",
+//      "Sword",
+//      "Axe",
+//      "Blunt",
+//      "Bow"
+//    ]
    
+   
+function CreateWeaponByName(weaponName, damage)
+{
+  switch(weaponName)
+  {
+      case "Wand" :
+        return new Wand(damage);
+        break;
+      case "Sword" :
+        return new  Sword(damage);
+        break;
+      case "Axe" :
+        return new  Axe(damage);
+        break;
+    case "Blunt" :
+        return new  Blunt(damage);
+        break;
+    case "Bow" :
+        return new  Bow(damage);
+        break;
+  }
+}
