@@ -1,6 +1,5 @@
 let allPlayers =[];
 
-
 function AddAllPlayersType(allPlayersType){
     allPlayersType.forEach(element => {
         AddPlayer(element.playerType);
@@ -18,7 +17,6 @@ function AddAllWeapon(){
 
 function AddPlayer(playerType) {
     var html = `<option value=${playerType}>${playerType}</option>`
-
     document.getElementById('playerType').innerHTML += html;
 }
 
@@ -40,4 +38,37 @@ function CreatePlayer()
 
     let player =CreateplayerByType(playerType,weapon,damage, gender,name);
     allPlayers.push(player);
+
+    AddAllPlayers();
 }
+
+function AddAllPlayers(){
+        if(allPlayers.length>0)
+        {
+            document.getElementById('allPlayers').innerHTML = "";
+            allPlayers.forEach(element => {
+                AddPlayerToList(element.constructor.name,element.name,element.baseWeapon.damage,element.gender, element.baseWeapon.constructor.name,element);
+            });
+        }
+}
+    
+function AddPlayerToList(playerType, name,damage,gender,weapon, player) {
+        var html = `<div class="col-sm-4 border d-flex justify-content-center text-center player">
+        <div class="players">
+        <p class="playerType">${playerType}</p>
+        <p>${name}</p>
+        <p >${damage}</p>
+        <p >${gender}</p>
+        <p >${weapon}</p>
+        <button onclick="Attack('${player.Attack()}')" class="attack">Attack</button>
+        </div>
+        </div>`
+        document.getElementById("allPlayers").innerHTML += html;
+}
+
+function Attack(player)
+{
+    alert(player);
+}
+    
+
