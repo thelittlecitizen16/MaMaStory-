@@ -53,14 +53,14 @@ function AddAllPlayers(){
 }
     
 function AddPlayerToList(playerType, name,damage,gender,weapon, player) {
-        var html = `<div class="col-sm-4 border d-flex justify-content-center text-center player">
+        var html = `<div class="col-sm-3 border d-flex justify-content-center text-center player">
         <div class="players">
         <p class="playerType">${playerType}</p>
         <p>${name}</p>
         <p >${damage}</p>
         <p >${gender}</p>
         <p >${weapon}</p>
-        <button onclick="Attack('${player.Attack()}')" class="attack">Attack</button>
+        <button onclick="Attack('${player.Attack()}')" class="attack button">Attack</button>
         </div>
         </div>`
         document.getElementById("allPlayers").innerHTML += html;

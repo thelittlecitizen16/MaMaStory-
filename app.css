@@ -3,36 +3,25 @@
     overflow: hidden;
   }
   
-  .herf {
+  #logo {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    float: right;
-  }
-  
-  #topbar .herf:hover {
-   border-top: 4px solid darkcyan;
-   text-decoration: none;
-   color: white;
+    font-size: 40px;
   }
 
-    
-  #topbar .left:hover {
-    border-top: 4px solid darkcyan;
-    text-decoration: none;
-    color: white;
-   }
- 
+  .button{
+      border: violet;
+      border-radius: 3px;
+      background-color: violet;
+      font-size: 19px;
+      color: white;
+  }
 
-  .left{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    float: left;
+  .playerType{
+    font-weight: bold;
+  }
+
+  .player{
+    margin-right: 36px;
   }

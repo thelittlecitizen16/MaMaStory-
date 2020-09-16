@@ -7,7 +7,7 @@ class BasePlayer{
 
       Attack() 
       {
-          return `${this.name} Attacked with ${this.baseWeapon.Damage} Damage! ${this.baseWeapon.Attack()}`;
+          return `${this.name} Attacked with ${this.baseWeapon.damage} Damage! ${this.baseWeapon.Attack()}`;
       }
 }
 
