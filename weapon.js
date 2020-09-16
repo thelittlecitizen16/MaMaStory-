@@ -79,8 +79,8 @@ class Bow extends BaseWeapon
 //      "Bow"
 //    ]
    
-   
-function CreateWeaponByName(weaponName, damage)
+
+ function CreateWeaponByName(weaponName, damage)
 {
   switch(weaponName)
   {
@@ -101,3 +101,4 @@ function CreateWeaponByName(weaponName, damage)
         break;
   }
 }
+

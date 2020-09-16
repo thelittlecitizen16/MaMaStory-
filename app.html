@@ -23,6 +23,7 @@
         <div class="container-fluid">
             <div class="row content">
                 <div class="col-sm-4 text-left try">
+                    <form name="theform">
                     <div>
                         <label>Player Type:</label>
                         <select onchange="AddAllWeapon(this.value)" id="playerType"> 
@@ -31,27 +32,28 @@
                     </div>
                     <div>
                         <label>Name:</label>
-                        <input type="text" name="name" id="name" placeholder="enter name">
+                        <input type="text" name="name" id="name" placeholder="enter name" onkeyup="checkform()">
                     </div>
                     <div>
                         <label>Damage:</label>
-                        <input type="number" name="damage" id="damage" placeholder="enter damage">
+                        <input type="number" name="damage" id="damage" placeholder="enter damage" onkeyup="checkform()">
                     </div>
                     <div>
                         <label>Gender:</label>
-                        <select id="gender"> 
+                        <select onchange="checkform()" id="gender"> 
                             <option value="woman">woman</option>
                             <option value="male">man</option>
                         </select>
                     </div>
                     <div>
                         <label>Weapon:</label>
-                        <select id="weapon"> 
+                        <select id="weapon" onchange="checkform()"> 
                         </select>
                     </div>
-                    <div>
-                        <button onclick="CreatePlayer()" class="button">Create</button>
-                    </div> 
+                </form>
+                <div>
+                    <button onclick="CreatePlayer()" class="button" id="submitbutton" disabled="disabled">Create</button>
+                </div> 
                 </div>
                 <div class="col-sm-8 text-right">
                  <div class="row content d-flex justify-content-center text-center" id="allPlayers">
